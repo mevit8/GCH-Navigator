@@ -1,9 +1,4 @@
 .git
 .gitignore
-.DS_Store
-*.md
+README.md
 node_modules
-npm-debug.log
-.env
-.vscode
-.idea
