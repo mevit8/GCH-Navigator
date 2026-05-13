@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY . .
 
-CMD python -m http.server ${PORT:-8000}
+CMD sh -c "python -m http.server ${PORT:-8000}"
