@@ -1,9 +1,5 @@
-FROM python:3.11-slim
+FROM nginx:alpine
 
-WORKDIR /app
-
-COPY . .
+COPY . /usr/share/nginx/html
 
 EXPOSE 80
-
-CMD ["python", "-m", "http.server", "80", "--bind", "0.0.0.0"]
