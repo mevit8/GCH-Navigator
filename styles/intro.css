@@ -183,3 +183,110 @@
     linear-gradient(to bottom, var(--rule-strong) 0 1px, transparent 1px) center / 1px 14px no-repeat;
   margin-left: 28px;
 }
+
+
+/* ============================================================
+   STAGE — BANNER VARIANT (full-width image stage)
+   Used for Stage 02 where a wide reference figure is the focus.
+   ============================================================ */
+.stage.stage--banner {
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 2.4vw, 32px);
+  align-items: stretch;
+  text-align: left;
+}
+.stage--banner .banner-head {
+  max-width: 880px;
+}
+.stage--banner .banner-head .num {
+  display: inline-block;
+  font-family: "Geist Mono", monospace;
+  font-size: 12px; letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--acc);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.stage--banner .banner-head h2 {
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 0.98; letter-spacing: -0.035em;
+  font-weight: 600;
+  margin: 6px 0 12px;
+  color: var(--ink);
+}
+.stage--banner .banner-head h2 em {
+  font-style: normal;
+  background: var(--brand-grad);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+.stage--banner .banner-head .lede {
+  font-size: 15px; line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 720px;
+}
+.stage--banner .banner-fig {
+  margin: 0;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: clamp(16px, 2vw, 28px);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.stage--banner .banner-fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 56vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+
+/* ============================================================
+   STAGE — STEP VARIANT (text + giant numeral, no chart)
+   Used for Stages 03-05 (Step 01/02/03 deep-dives).
+   ============================================================ */
+.stage.stage--step {
+  /* keep the two-column grid from the base .stage */
+}
+.stage--step .rhs--numeral {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 50%,
+      color-mix(in oklab, var(--step-color, var(--acc)) 14%, transparent) 0%,
+      transparent 60%),
+    var(--paper-2);
+  position: relative;
+  overflow: hidden;
+}
+.stage--step .rhs--numeral::before {
+  /* keep the dotted scrim from the base .stage .rhs::before */
+}
+.stage--step .step-numeral {
+  position: relative;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 4px;
+  color: var(--step-color, var(--acc));
+  user-select: none;
+}
+.stage--step .sn-label {
+  font-family: "Geist Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.stage--step .sn-digit {
+  font-family: "Geist", sans-serif;
+  font-weight: 600;
+  font-size: clamp(140px, 22vw, 240px);
+  line-height: 0.86;
+  letter-spacing: -0.05em;
+  background: linear-gradient(180deg,
+    color-mix(in oklab, var(--step-color, var(--acc)) 100%, transparent) 0%,
+    color-mix(in oklab, var(--step-color, var(--acc)) 55%, transparent) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}

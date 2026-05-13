@@ -11,7 +11,6 @@
     "hubWidth": 1440,
     "showWires": true,
     "showCenter": true,
-    "showBiofuel": true,
     "stagePad": 52
   }/*EDITMODE-END*/;
 
@@ -43,10 +42,6 @@
       const ctr = document.querySelector(".center-hub");
       if (ctr) ctr.style.display = tweaks.showCenter ? "" : "none";
 
-      // biofuel
-      const bio = document.querySelector('[data-model="biofuel"]');
-      if (bio) bio.style.display = tweaks.showBiofuel ? "" : "none";
-
       // stage pad
       document.querySelectorAll(".stage").forEach(el => {
         el.style.paddingTop = tweaks.stagePad + "px";
@@ -60,7 +55,6 @@
       document.getElementById("valWidth").textContent = tweaks.hubWidth + "px";
       document.getElementById("tkWires").checked = tweaks.showWires;
       document.getElementById("tkCenter").checked = tweaks.showCenter;
-      document.getElementById("tkBiofuel").checked = tweaks.showBiofuel;
       document.getElementById("tkPad").value = tweaks.stagePad;
       document.getElementById("valPad").textContent = tweaks.stagePad + "px";
     }
@@ -89,7 +83,6 @@
     document.getElementById("tkWidth").addEventListener("input", e => setTweak("hubWidth", parseInt(e.target.value, 10)));
     document.getElementById("tkWires").addEventListener("change", e => setTweak("showWires", e.target.checked));
     document.getElementById("tkCenter").addEventListener("change", e => setTweak("showCenter", e.target.checked));
-    document.getElementById("tkBiofuel").addEventListener("change", e => setTweak("showBiofuel", e.target.checked));
     document.getElementById("tkPad").addEventListener("input", e => setTweak("stagePad", parseInt(e.target.value, 10)));
 
     document.getElementById("tweaksClose").addEventListener("click", () => {

@@ -33,9 +33,9 @@
       const prev = document.getElementById("prevBtn");
       const next = document.getElementById("nextBtn");
       if (prev) prev.disabled = idx === 0;
-      if (next) next.disabled = idx === total - 1;
-      [...dotsEl.children].forEach((d, i2) => d.classList.toggle("active", i2 === idx));
-    }
+    if (next) next.disabled = idx === total - 1;
+    if (dotsEl) [...dotsEl.children].forEach((d, i2) => d.classList.toggle("active", i2 === idx));
+  }
 
   renderDots();
   goTo(0);

@@ -35,13 +35,6 @@
       desc: "Computable general-equilibrium model of world trade and sectoral output. Beyond-GDP accounting with ecosystem services valuation.",
       stats: [["sectors", "57"], ["regions", "141"], ["horizon", "2050"], ["coupling", "GTAP"]],
     },
-    biofuel: {
-      name: "Biofuels",
-      code: "BiofuelGCH",
-      color: "var(--c-land)",
-      desc: "Feedstock yields and biofuel production potential by region. Couples crop simulation outputs with conversion-process databases.",
-      stats: [["feedstocks", "9"], ["pathways", "18"], ["horizon", "2050"], ["resolution", "national"]],
-    },
     scenarios: {
       name: "Scenarios & Goals",
       code: "ScenariosGCH",
@@ -60,10 +53,9 @@
 
   GCH.RELATED = {
     water:     ["land", "energy", "scenarios"],
-    land:      ["water", "biofuel", "economy"],
+    land:      ["water", "economy", "scenarios"],
     energy:    ["economy", "scenarios", "land"],
     economy:   ["financing", "energy", "scenarios"],
-    biofuel:   ["land", "energy", "water"],
     scenarios: ["land", "water", "energy"],
     financing: ["economy", "scenarios", "land"],
   };

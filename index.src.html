@@ -64,7 +64,7 @@
             <!-- Stage 1: Vision -->
             <article class="stage">
               <div class="lhs">
-                <span class="num">Stage 01 / Vision</span>
+                <span class="num">Vision</span>
                 <h2>A <em>Global Commons</em> for systems transformation.</h2>
                 <p class="lede">An open, accessible digital platform that couples integrated modelling, data infrastructure and stakeholder co-design — to translate systemic evidence into coordinated, country-specific action toward the SDGs.</p>
                 <ul class="points">
@@ -74,114 +74,123 @@
                 </ul>
               </div>
               <div class="rhs">
-                <!-- Vision art: nested rings -->
-                <svg class="art" viewBox="0 0 400 320" aria-hidden="true">
+                <!-- Vision art: GCH-as-container holding the three pillars -->
+                <svg class="art" viewBox="0 0 400 340" aria-hidden="true">
                   <defs>
-                    <radialGradient id="rg1" cx="50%" cy="50%" r="50%">
-                      <stop offset="0" stop-color="var(--c-land)" stop-opacity="0.18"/>
-                      <stop offset="1" stop-color="var(--c-land)" stop-opacity="0"/>
-                    </radialGradient>
+                    <linearGradient id="gchBg" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="var(--c-water)" stop-opacity="0.08"/>
+                      <stop offset="1" stop-color="var(--c-land)"  stop-opacity="0.08"/>
+                    </linearGradient>
                   </defs>
-                  <circle cx="200" cy="160" r="140" fill="url(#rg1)"/>
-                  <circle cx="200" cy="160" r="130" fill="none" stroke="currentColor" stroke-opacity="0.2" stroke-dasharray="3 6" style="color: var(--ink-2);"/>
-                  <circle cx="200" cy="160" r="92"  fill="none" stroke="var(--c-land)" stroke-width="1.5" stroke-opacity="0.7"/>
-                  <circle cx="200" cy="160" r="56"  fill="none" stroke="var(--c-water)" stroke-width="1.5" stroke-opacity="0.7"/>
-                  <circle cx="200" cy="160" r="22"  fill="var(--ink)"/>
-                  <text x="200" y="164" text-anchor="middle" fill="white" font-family="Geist Mono" font-size="11" font-weight="600">GCH</text>
-                  <text x="200" y="38" text-anchor="middle" fill="var(--ink-2)" font-family="Geist Mono" font-size="10" letter-spacing="2">CO-DESIGN</text>
-                  <text x="200" y="296" text-anchor="middle" fill="var(--ink-2)" font-family="Geist Mono" font-size="10" letter-spacing="2">FINANCE</text>
-                  <text x="48" y="166" text-anchor="middle" fill="var(--ink-2)" font-family="Geist Mono" font-size="10" letter-spacing="2">DATA</text>
-                  <text x="352" y="166" text-anchor="middle" fill="var(--ink-2)" font-family="Geist Mono" font-size="10" letter-spacing="2">MODELS</text>
+
+                  <!-- Outer GCH container -->
+                  <rect x="14" y="42" width="372" height="284" rx="22"
+                        fill="url(#gchBg)" stroke="var(--ink)" stroke-width="1.5"/>
+
+                  <!-- GCH label badge straddling the top edge -->
+                  <rect x="138" y="22" width="124" height="36" rx="18" fill="var(--ink)"/>
+                  <text x="200" y="38" text-anchor="middle"
+                        font-family="Geist Mono" font-size="9" letter-spacing="2"
+                        fill="rgba(255,255,255,0.7)">GLOBAL COMMONS</text>
+                  <text x="200" y="52" text-anchor="middle"
+                        font-family="Geist" font-weight="600" font-size="13" fill="white">GCH</text>
+
+                  <!-- Pillar 1: Database, AI-supported -->
+                  <g>
+                    <rect x="34" y="80" width="332" height="64" rx="12"
+                          fill="var(--paper)" stroke="var(--rule-strong)" stroke-width="1"/>
+                    <rect x="34" y="80" width="6"   height="64" rx="3" fill="var(--c-water)"/>
+                    <circle cx="68" cy="112" r="18" fill="var(--c-water-soft)"/>
+                    <g stroke="var(--c-water)" stroke-width="1.6" fill="none"
+                       stroke-linecap="round" transform="translate(68 112)">
+                      <ellipse cx="0" cy="-6" rx="7" ry="2.4"/>
+                      <path d="M-7 -6 L-7 6 a7 2.4 0 0 0 14 0 L7 -6"/>
+                      <path d="M-7 0 a7 2.4 0 0 0 14 0"/>
+                    </g>
+                    <text x="100" y="107" font-family="Geist" font-weight="600"
+                          font-size="14" fill="var(--ink)">Database</text>
+                    <text x="100" y="125" font-family="Geist" font-size="11.5"
+                          fill="var(--ink-2)" textLength="258" lengthAdjust="spacingAndGlyphs">AI-supported · integrated data infrastructure</text>
+                  </g>
+
+                  <!-- Pillar 2: Models + Co-design -->
+                  <g>
+                    <rect x="34" y="156" width="332" height="64" rx="12"
+                          fill="var(--paper)" stroke="var(--rule-strong)" stroke-width="1"/>
+                    <rect x="34" y="156" width="6"   height="64" rx="3" fill="var(--c-land)"/>
+                    <circle cx="68" cy="188" r="18" fill="var(--c-land-soft)"/>
+                    <g stroke="var(--c-land)" stroke-width="1.6" fill="none"
+                       transform="translate(68 188)">
+                      <circle cx="-5" cy="-3" r="4"/>
+                      <circle cx="5"  cy="-3" r="4"/>
+                      <circle cx="0"  cy="6"  r="4"/>
+                      <line x1="-3" y1="-1" x2="3"  y2="-1"/>
+                      <line x1="-3" y1="0"  x2="-1" y2="4"/>
+                      <line x1="3"  y1="0"  x2="1"  y2="4"/>
+                    </g>
+                    <text x="100" y="183" font-family="Geist" font-weight="600"
+                          font-size="14" fill="var(--ink)">Models + Co-design</text>
+                    <text x="100" y="201" font-family="Geist" font-size="11.5"
+                          fill="var(--ink-2)" textLength="258" lengthAdjust="spacingAndGlyphs">Coupled modelling chains × stakeholder co-design</text>
+                  </g>
+
+                  <!-- Pillar 3: Financing solutions -->
+                  <g>
+                    <rect x="34" y="232" width="332" height="64" rx="12"
+                          fill="var(--paper)" stroke="var(--rule-strong)" stroke-width="1"/>
+                    <rect x="34" y="232" width="6"   height="64" rx="3" fill="var(--c-fin)"/>
+                    <circle cx="68" cy="264" r="18" fill="var(--c-fin-soft)"/>
+                    <g stroke="var(--c-fin)" stroke-width="1.6" fill="none"
+                       transform="translate(68 264)">
+                      <circle cx="0" cy="0" r="7"/>
+                      <line x1="0"  y1="-4" x2="0" y2="4"/>
+                      <line x1="-3" y1="-2" x2="3" y2="-2"/>
+                      <line x1="-3" y1="2"  x2="3" y2="2"/>
+                    </g>
+                    <text x="100" y="259" font-family="Geist" font-weight="600"
+                          font-size="14" fill="var(--ink)">Financing solutions</text>
+                    <text x="100" y="277" font-family="Geist" font-size="11.5"
+                          fill="var(--ink-2)" textLength="258" lengthAdjust="spacingAndGlyphs">Sovereign, concessional &amp; blended capital flows</text>
+                  </g>
                 </svg>
               </div>
             </article>
 
             <!-- Stage 2: Three-step approach -->
-            <article class="stage">
-              <div class="lhs">
-                <span class="num">Stage 02 / Operational framework</span>
+            <article class="stage stage--banner">
+              <header class="banner-head">
+                <span class="num">Operational framework</span>
                 <h2>The <em>three-step</em> approach.</h2>
-                <p class="lede">A practical loop for operationalizing systems transformation. The same three steps run continuously — at country, regional and global scales.</p>
-                <ul class="points">
-                  <li>Outputs of one step feed the next; the loop tightens with every iteration.</li>
-                  <li>Embedded into a digital Global Commons so anyone can run it.</li>
-                </ul>
-              </div>
-              <div class="rhs" style="padding: 36px;">
-                <div class="ladder" style="max-width: 380px;">
-                  <div class="ladder-step">
-                    <div class="ln">01</div>
-                    <div>
-                      <div class="lt">Continuous monitoring &amp; assessment</div>
-                      <div class="lp">Spatially explicit indicators across biophysical, economic and social systems.</div>
-                    </div>
-                  </div>
-                  <div class="ladder-arrow"></div>
-                  <div class="ladder-step">
-                    <div class="ln">02</div>
-                    <div>
-                      <div class="lt">Co-designed transformation pathways</div>
-                      <div class="lp">Integrated modelling chains × stakeholder engagement.</div>
-                    </div>
-                  </div>
-                  <div class="ladder-arrow"></div>
-                  <div class="ladder-step">
-                    <div class="ln">03</div>
-                    <div>
-                      <div class="lt">Aligned financing &amp; governance</div>
-                      <div class="lp">Investment tools, accountability, implementation.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <p class="lede">A practical loop for operationalizing systems transformation — the same three steps run continuously at country, regional and global scales.</p>
+              </header>
+              <figure class="banner-fig">
+                <img src="assets/three-step-approach.jpg" alt="Global Commons 3-Step Approach: Step 1 — understanding and measuring the challenges; Step 2 — pathways for SDGs and national commitments, systems-science modelling, stakeholder co-design; Step 3 — financing transition policies and investment portfolios." />
+              </figure>
             </article>
 
-            <!-- Stage 3: Step 1 detail -->
-            <article class="stage">
+            <!-- Stages 3-5: Step deep-dives (text-only) -->
+            <article class="stage stage--step">
               <div class="lhs">
-                <span class="num">Stage 03 / Step 01</span>
+                <span class="num">Step 01</span>
                 <h2>Continuous <em>monitoring &amp; assessment</em>.</h2>
                 <p class="lede">A living evidence base. Coupled data infrastructures and digital twins that quantify the country-specific feasible space — the binding biophysical, economic and social constraints.</p>
                 <ul class="points">
                   <li>Earth observation × in-situ sensors × administrative data.</li>
                   <li>Indicators tracked at the same granularity as policy is made.</li>
-                  <li>Outputs: feasibility envelopes used to calibrate Step 2.</li>
+                  <li>Outputs: feasibility envelopes used to calibrate Step 02.</li>
                 </ul>
               </div>
-              <div class="rhs">
-                <!-- Indicator-grid art -->
-                <svg class="art" viewBox="0 0 400 280" aria-hidden="true">
-                  <g stroke="var(--rule)" stroke-width="1">
-                    <line x1="40" y1="40" x2="40" y2="240"/>
-                    <line x1="40" y1="240" x2="360" y2="240"/>
-                  </g>
-                  <g font-family="Geist Mono" font-size="9" fill="var(--muted)">
-                    <text x="40" y="258" text-anchor="middle">2020</text>
-                    <text x="120" y="258" text-anchor="middle">2025</text>
-                    <text x="200" y="258" text-anchor="middle">2030</text>
-                    <text x="280" y="258" text-anchor="middle">2040</text>
-                    <text x="360" y="258" text-anchor="middle">2050</text>
-                  </g>
-                  <path d="M 40 200 Q 120 180 200 140 T 360 60"
-                        fill="none" stroke="var(--c-land)" stroke-width="2.5"/>
-                  <path d="M 40 220 Q 120 215 200 200 T 360 140"
-                        fill="none" stroke="var(--c-water)" stroke-width="2.5"/>
-                  <path d="M 40 180 Q 120 170 200 175 T 360 100"
-                        fill="none" stroke="var(--c-energy)" stroke-width="2.5"/>
-                  <g>
-                    <circle cx="360" cy="60" r="4" fill="var(--c-land)"/>
-                    <circle cx="360" cy="100" r="4" fill="var(--c-energy)"/>
-                    <circle cx="360" cy="140" r="4" fill="var(--c-water)"/>
-                  </g>
-                  <text x="40" y="30" font-family="Geist Mono" font-size="10" fill="var(--ink-2)">indicator drift, 2020 — 2050</text>
-                </svg>
+              <div class="rhs rhs--numeral" style="--step-color: var(--c-water);">
+                <div class="step-numeral" aria-hidden="true">
+                  <span class="sn-label">Step</span>
+                  <span class="sn-digit">01</span>
+                </div>
               </div>
             </article>
 
-            <!-- Stage 4: Step 2 detail with Figure 2 placeholder -->
-            <article class="stage">
+            <article class="stage stage--step">
               <div class="lhs">
-                <span class="num">Stage 04 / Step 02 · Figure 2</span>
+                <span class="num">Step 02</span>
                 <h2>Co-designed <em>transformation pathways</em>.</h2>
                 <p class="lede">Integrated modelling chains coupled with structured stakeholder engagement. Pathway design is an iterative dialogue between models, communities and decision-makers.</p>
                 <ul class="points">
@@ -190,57 +199,17 @@
                   <li>Living-lab validation by stakeholders before scenarios go public.</li>
                 </ul>
               </div>
-              <div class="rhs">
-                <!-- Figure 2: pathway co-design schematic -->
-                <svg class="art" viewBox="0 0 400 320" aria-hidden="true">
-                  <defs>
-                    <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-                      <path d="M0,0 L10,5 L0,10 z" fill="var(--ink-2)"/>
-                    </marker>
-                  </defs>
-                  <!-- left column models -->
-                  <g>
-                    <rect x="20" y="40"  width="120" height="44" rx="10" fill="var(--c-water-soft)" stroke="var(--c-water)" stroke-width="1.2"/>
-                    <text x="80" y="66" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-water)">Water</text>
-                    <rect x="20" y="100" width="120" height="44" rx="10" fill="var(--c-land-soft)" stroke="var(--c-land)" stroke-width="1.2"/>
-                    <text x="80" y="126" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-land)">Land &amp; Food</text>
-                    <rect x="20" y="160" width="120" height="44" rx="10" fill="var(--c-energy-soft)" stroke="var(--c-energy)" stroke-width="1.2"/>
-                    <text x="80" y="186" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-energy)">Energy</text>
-                    <rect x="20" y="220" width="120" height="44" rx="10" fill="var(--c-econ-soft)" stroke="var(--c-econ)" stroke-width="1.2"/>
-                    <text x="80" y="246" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-econ)">Economy</text>
-                  </g>
-                  <!-- center coupling -->
-                  <g>
-                    <rect x="170" y="120" width="80" height="80" rx="14" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
-                    <text x="210" y="156" text-anchor="middle" font-family="Geist" font-weight="600" font-size="11" fill="var(--ink)">Coupled</text>
-                    <text x="210" y="170" text-anchor="middle" font-family="Geist" font-weight="600" font-size="11" fill="var(--ink)">modelling</text>
-                    <text x="210" y="184" text-anchor="middle" font-family="Geist" font-weight="600" font-size="11" fill="var(--ink)">chain</text>
-                  </g>
-                  <!-- right stakeholder loop -->
-                  <g>
-                    <rect x="270" y="100" width="110" height="120" rx="14" fill="color-mix(in oklab, var(--c-people) 8%, white)" stroke="var(--c-people)" stroke-width="1.2"/>
-                    <text x="325" y="138" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-people)">Stakeholders</text>
-                    <text x="325" y="156" text-anchor="middle" font-family="Geist" font-size="10" fill="var(--ink-2)">co-design</text>
-                    <text x="325" y="170" text-anchor="middle" font-family="Geist" font-size="10" fill="var(--ink-2)">living labs</text>
-                    <text x="325" y="184" text-anchor="middle" font-family="Geist" font-size="10" fill="var(--ink-2)">validation</text>
-                  </g>
-                  <!-- arrows -->
-                  <g stroke="var(--ink-2)" stroke-width="1.4" fill="none">
-                    <path d="M 140 62  C 158 62, 165 130, 170 140" marker-end="url(#ar2)"/>
-                    <path d="M 140 122 C 158 122, 165 145, 170 152" marker-end="url(#ar2)"/>
-                    <path d="M 140 182 C 158 182, 165 168, 170 168" marker-end="url(#ar2)"/>
-                    <path d="M 140 242 C 158 242, 165 180, 170 180" marker-end="url(#ar2)"/>
-                    <path d="M 250 160 L 268 160" marker-end="url(#ar2)"/>
-                    <path d="M 270 200 C 220 260, 130 260, 80 264 L 80 226" marker-end="url(#ar2)"/>
-                  </g>
-                </svg>
+              <div class="rhs rhs--numeral" style="--step-color: var(--c-land);">
+                <div class="step-numeral" aria-hidden="true">
+                  <span class="sn-label">Step</span>
+                  <span class="sn-digit">02</span>
+                </div>
               </div>
             </article>
 
-            <!-- Stage 5: Step 3 detail with Figure 3 placeholder -->
-            <article class="stage">
+            <article class="stage stage--step">
               <div class="lhs">
-                <span class="num">Stage 05 / Step 03 · Figure 3</span>
+                <span class="num">Step 03</span>
                 <h2>Aligned <em>financing &amp; governance</em>.</h2>
                 <p class="lede">A reformed global financial architecture in which capital flows to country-validated pathways — and where ecosystem services are priced into macroeconomic decisions.</p>
                 <ul class="points">
@@ -249,56 +218,18 @@
                   <li>Transparent accountability to keep transitions on track.</li>
                 </ul>
               </div>
-              <div class="rhs">
-                <!-- Figure 3: finance flow schematic -->
-                <svg class="art" viewBox="0 0 400 320" aria-hidden="true">
-                  <defs>
-                    <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-                      <path d="M0,0 L10,5 L0,10 z" fill="var(--c-fin)"/>
-                    </marker>
-                  </defs>
-                  <!-- top: pathway -->
-                  <rect x="80" y="30" width="240" height="46" rx="12" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.4"/>
-                  <text x="200" y="51" text-anchor="middle" font-family="Geist" font-weight="600" font-size="13">Country-validated pathway</text>
-                  <text x="200" y="66" text-anchor="middle" font-family="Geist Mono" font-size="9.5" fill="var(--muted)">milestones · indicators · timelines</text>
-                  <!-- finance pillars -->
-                  <g>
-                    <rect x="30"  y="130" width="105" height="86" rx="12" fill="var(--c-fin-soft)" stroke="var(--c-fin)" stroke-width="1.2"/>
-                    <text x="82" y="160" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-fin)">Sovereign &amp;</text>
-                    <text x="82" y="175" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-fin)">concessional</text>
-                    <text x="82" y="195" text-anchor="middle" font-family="Geist Mono" font-size="9" fill="var(--ink-2)">milestone-linked</text>
-                    <rect x="148" y="130" width="105" height="86" rx="12" fill="var(--c-fin-soft)" stroke="var(--c-fin)" stroke-width="1.2"/>
-                    <text x="200" y="160" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-fin)">Private capital</text>
-                    <text x="200" y="175" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-fin)">&amp; blended</text>
-                    <text x="200" y="195" text-anchor="middle" font-family="Geist Mono" font-size="9" fill="var(--ink-2)">de-risked</text>
-                    <rect x="266" y="130" width="105" height="86" rx="12" fill="var(--c-fin-soft)" stroke="var(--c-fin)" stroke-width="1.2"/>
-                    <text x="318" y="160" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-fin)">Ecosystem</text>
-                    <text x="318" y="175" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-fin)">services</text>
-                    <text x="318" y="195" text-anchor="middle" font-family="Geist Mono" font-size="9" fill="var(--ink-2)">priced in CGE</text>
-                  </g>
-                  <!-- delivery -->
-                  <rect x="80" y="248" width="240" height="46" rx="12" fill="var(--ink)"/>
-                  <text x="200" y="269" text-anchor="middle" font-family="Geist" font-weight="600" font-size="13" fill="white">Implementation &amp; accountability</text>
-                  <text x="200" y="284" text-anchor="middle" font-family="Geist Mono" font-size="9" fill="rgba(255,255,255,0.65)">audited · transparent · adaptive</text>
-                  <!-- arrows -->
-                  <g stroke="var(--c-fin)" stroke-width="1.5" fill="none">
-                    <path d="M 200 78 L 82 128" marker-end="url(#ar3)"/>
-                    <path d="M 200 78 L 200 128" marker-end="url(#ar3)"/>
-                    <path d="M 200 78 L 318 128" marker-end="url(#ar3)"/>
-                    <path d="M 82 218 L 200 246" marker-end="url(#ar3)"/>
-                    <path d="M 200 218 L 200 246" marker-end="url(#ar3)"/>
-                    <path d="M 318 218 L 200 246" marker-end="url(#ar3)"/>
-                  </g>
-                </svg>
+              <div class="rhs rhs--numeral" style="--step-color: var(--c-fin);">
+                <div class="step-numeral" aria-hidden="true">
+                  <span class="sn-label">Step</span>
+                  <span class="sn-digit">03</span>
+                </div>
               </div>
             </article>
 
-          </div>
+                    </div>
         </div>
 
         <div class="stage-chrome">
-          <div class="dots" id="dots" role="tablist"></div>
-          <div class="stage-counter">stage <b id="stageNum">01</b> of <b id="stageTotal">05</b></div>
           <div class="nav-btns">
             <button id="prevBtn">← Prev</button>
             <button id="nextBtn" class="primary">Next →</button>
@@ -422,12 +353,7 @@
             </div>
           </div>
 
-          <!-- Biofuel small node (related model) -->
-          <a href="#/model/biofuel" target="_blank" rel="noopener" data-model="biofuel" style="position:absolute; left:11%; top:50%; transform: translate(-50%,-50%); display: inline-flex; align-items:center; gap:8px; padding:8px 14px; background: var(--paper); border:1px solid var(--c-land); border-radius:999px; font-size:12px; color: var(--c-land); font-weight: 500;">
-            <span style="width:7px; height:7px; border-radius:50%; background:var(--c-land);"></span>
-            BiofuelGCH →
-          </a>
-
+          
         </div>
       </div>
     </div>
@@ -503,9 +429,6 @@
       </div>
       <div class="tweak-row">
         <label class="tweak-toggle"><input type="checkbox" id="tkCenter" checked /><span class="t">Show people / stakeholders core</span></label>
-      </div>
-      <div class="tweak-row">
-        <label class="tweak-toggle"><input type="checkbox" id="tkBiofuel" checked /><span class="t">Show Biofuels satellite</span></label>
       </div>
       <div class="tweak-row">
         <div class="lbl"><span>Slide vertical padding</span><span class="val" id="valPad">52px</span></div>
