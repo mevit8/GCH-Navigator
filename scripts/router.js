@@ -35,9 +35,52 @@
     document.getElementById("modelHeading").textContent = m.name;
     document.getElementById("modelDesc").textContent  = m.desc;
     document.getElementById("modelSwatch").style.background = m.color;
-    document.getElementById("iframeUrl").textContent  = "https://apps.gch-navigator.org/" + m.code.toLowerCase();
+    document.getElementById("iframeUrl").textContent  = m.url || ("https://apps.gch-navigator.org/" + m.code.toLowerCase());
     document.getElementById("iframeTitle").textContent = m.name + " · " + m.code;
-    document.getElementById("iframeStub").textContent = "/apps/" + id;
+
+    // Connection status pill in the model bar
+    const statusEl = document.querySelector("#view-model .model-bar .right");
+    if (statusEl) {
+      statusEl.innerHTML = m.url
+        ? '<span class="pip"></span><span>connected · streamlit runtime</span><span style="color:var(--rule-strong);">|</span><span>last sync · just now</span>'
+        : '<span class="pip pip-pending"></span><span>in development · awaiting deployment</span>';
+    }
+
+    const openBtn = document.getElementById("iframeOpenBtn");
+    if (openBtn) {
+      if (m.url) {
+        openBtn.href = m.url;
+        openBtn.style.display = "";
+      } else {
+        openBtn.removeAttribute("href");
+        openBtn.style.display = "none";
+      }
+    }
+
+    // Swap iframe slot: real <iframe> if a url is wired, otherwise the placeholder.
+    const frame = document.querySelector("#view-model .iframe-frame");
+    if (frame) {
+      const existingIframe = frame.querySelector("iframe.live-embed");
+      const placeholder = frame.querySelector(".iframe-placeholder");
+      if (m.url) {
+        if (placeholder) placeholder.style.display = "none";
+        let iframe = existingIframe;
+        if (!iframe) {
+          iframe = document.createElement("iframe");
+          iframe.className = "live-embed";
+          iframe.setAttribute("loading", "lazy");
+          iframe.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+          iframe.setAttribute("allow", "clipboard-read; clipboard-write; fullscreen");
+          frame.appendChild(iframe);
+        }
+        iframe.style.display = "";
+        iframe.title = m.name + " · " + m.code;
+        if (iframe.src !== m.url) iframe.src = m.url;
+      } else {
+        if (existingIframe) existingIframe.style.display = "none";
+        if (placeholder) placeholder.style.display = "";
+      }
+    }
 
     const statsEl = document.getElementById("modelStats");
     statsEl.innerHTML = "";
@@ -66,11 +109,43 @@
   function applyRoute() {
     const r = parseRoute();
     setActiveView(r.name);
+    // Always start a fresh model view un-maximized
+    const vm = document.getElementById("view-model");
+    if (vm) vm.classList.remove("frame-maxed");
+    const maxBtn = document.getElementById("iframeMaxBtn");
+    if (maxBtn) {
+      const lbl = maxBtn.querySelector(".lbl");
+      if (lbl) lbl.textContent = "Expand";
+    }
     if (r.name === "model") renderModel(r.id);
     if (r.name === "hub" && GCH.fitHub) {
       requestAnimationFrame(() => { GCH.fitHub(); requestAnimationFrame(GCH.fitHub); });
     }
   }
+
+  // Maximize / restore toggle for the embedded app
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest("#iframeMaxBtn");
+    if (!btn) return;
+    e.preventDefault();
+    const vm = document.getElementById("view-model");
+    if (!vm) return;
+    const maxed = vm.classList.toggle("frame-maxed");
+    const lbl = btn.querySelector(".lbl");
+    if (lbl) lbl.textContent = maxed ? "Restore" : "Expand";
+    if (maxed) window.scrollTo({ top: 0, behavior: "instant" });
+  });
+
+  // Esc exits maximized mode
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    const vm = document.getElementById("view-model");
+    if (vm && vm.classList.contains("frame-maxed")) {
+      vm.classList.remove("frame-maxed");
+      const lbl = document.querySelector("#iframeMaxBtn .lbl");
+      if (lbl) lbl.textContent = "Expand";
+    }
+  });
 
   GCH.applyRoute = applyRoute;
   window.addEventListener("hashchange", applyRoute);

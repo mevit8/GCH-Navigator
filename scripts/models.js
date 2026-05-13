@@ -13,6 +13,7 @@
       color: "var(--c-water)",
       desc: "Water supply, management, stress and allocation across regions and timesteps. Sectoral demand for energy generation, agriculture and human consumption.",
       stats: [["sectors", "6"], ["regions", "global · national"], ["horizon", "2050"], ["resolution", "watershed"]],
+      url: "https://gch-watergch-production.up.railway.app/",
     },
     land: {
       name: "Land & Agri-food",
@@ -20,6 +21,7 @@
       color: "var(--c-land)",
       desc: "Land-area calculator and agri-food systems model. Quantifies area requirements for renewables expansion (wind, solar, bioenergy) alongside crop and livestock systems.",
       stats: [["modules", "3"], ["land classes", "11"], ["horizon", "2050"], ["resolution", "0.5°"]],
+      url: "https://web-production-29d01.up.railway.app/",
     },
     energy: {
       name: "Energy & Emissions",
@@ -27,6 +29,7 @@
       color: "var(--c-energy)",
       desc: "Energy-system & emissions accounting under demand and supply scenarios. Fuel-by-fuel consumption per sector and resulting GHG trajectories.",
       stats: [["fuels", "12"], ["processes", "30+"], ["horizon", "2050"], ["coupling", "LEAP"]],
+      url: null,
     },
     economy: {
       name: "Economy & Trade",
@@ -34,6 +37,7 @@
       color: "var(--c-econ)",
       desc: "Computable general-equilibrium model of world trade and sectoral output. Beyond-GDP accounting with ecosystem services valuation.",
       stats: [["sectors", "57"], ["regions", "141"], ["horizon", "2050"], ["coupling", "GTAP"]],
+      url: "https://gch-economy-production.up.railway.app/",
     },
     scenarios: {
       name: "Scenarios & Goals",
