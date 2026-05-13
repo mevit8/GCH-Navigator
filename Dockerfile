@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-ENV PORT=8000
+EXPOSE 8080
 
-CMD python -m http.server 8000
+CMD sh -c "python -m http.server 8080"
