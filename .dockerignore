@@ -1,0 +1,10 @@
+# Keep image small — exclude editor/OS noise and any node_modules etc.
+.git
+.gitignore
+.DS_Store
+*.md
+node_modules
+npm-debug.log
+.env
+.vscode
+.idea

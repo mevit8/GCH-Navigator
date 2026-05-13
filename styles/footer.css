@@ -1,0 +1,25 @@
+/* ============================================================
+   SITE FOOTER (logos)
+   ============================================================ */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 22px 28px;
+  margin-top: 24px;
+}
+.footer-inner {
+  max-width: 1360px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+}
+.footer-credit {
+  font-family: "Geist Mono", monospace;
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted);
+}
+.footer-logos { display: flex; align-items: center; gap: 22px; }
+.footer-logos img.fl-gch  { height: 38px; width: auto; }
+.footer-logos img.fl-sdsn { height: 30px; width: auto; }
+.footer-logos img.fl-aris { height: 32px; width: auto; }
+.footer-logos .fl-sep { width: 1px; height: 28px; background: var(--rule); }
+[data-theme="navy"] .footer-logos img { filter: brightness(0) invert(1) opacity(0.92); }

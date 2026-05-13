@@ -1,0 +1,148 @@
+/* ============================================================
+   HUB — bubble navigator
+   ============================================================ */
+.hub-shell { background: var(--hub-bg); }
+.hub-head {
+  text-align: center; padding: 28px 24px 4px;
+}
+.hub-head h1 {
+  font-size: clamp(32px, 4.2vw, 56px);
+  line-height: 1; letter-spacing: -0.035em;
+  font-weight: 600; margin: 12px 0 10px;
+}
+.hub-head h1 em {
+  font-style: normal;
+  background: var(--brand-grad);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hub-head p {
+  font-size: 15px; line-height: 1.6;
+  color: var(--ink-2);
+  max-width: 620px; margin: 0 auto;
+}
+
+.hub-stage-wrap { position: relative; width: 100%; overflow: hidden; }
+.hub-stage {
+  position: relative;
+  width: 1240px; height: 760px;
+  margin: 0 auto;
+  transform-origin: top left;
+}
+
+.bubble {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1.5px solid var(--bub-color, var(--ink));
+  background: radial-gradient(circle at 30% 25%,
+                color-mix(in oklab, var(--bub-color) 18%, white) 0%,
+                color-mix(in oklab, var(--bub-color) 8%,  white) 70%,
+                white 100%);
+  color: var(--bub-color, var(--ink));
+  display: grid; grid-template-rows: auto 1fr;
+  padding: 22px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1),
+              box-shadow .35s, border-color .25s;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04),
+              0 18px 36px -22px color-mix(in oklab, var(--bub-color) 60%, transparent);
+}
+.bubble:hover {
+  transform: translate(-50%, -50%) translateY(-4px) scale(1.03);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04),
+              0 28px 50px -20px color-mix(in oklab, var(--bub-color) 60%, transparent);
+}
+.bubble .ico {
+  height: 32px; margin-bottom: 6px;
+  display: grid; place-items: center;
+}
+.bubble .ico svg { width: 28px; height: 28px; }
+.bubble .name {
+  font-weight: 700; font-size: 17px;
+  letter-spacing: -0.01em; line-height: 1.05;
+  color: var(--bub-color);
+}
+.bubble .desc {
+  margin-top: 8px;
+  font-weight: 400; font-size: 12px; line-height: 1.4;
+  color: var(--ink-2);
+  max-width: 200px; margin-left: auto; margin-right: auto;
+}
+.bubble .model {
+  margin-top: 10px;
+  display: inline-block;
+  font-family: "Geist Mono", monospace;
+  font-size: 10px; letter-spacing: 0.08em;
+  padding: 3px 8px; border-radius: 999px;
+  background: color-mix(in oklab, var(--bub-color) 15%, white);
+  color: var(--bub-color);
+  border: 1px solid color-mix(in oklab, var(--bub-color) 30%, transparent);
+}
+
+/* Variant: pill (top + bottom) */
+.pill {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 18px;
+  border: 1.5px solid var(--bub-color, var(--ink));
+  background: color-mix(in oklab, var(--bub-color) 8%, white);
+  color: var(--bub-color);
+  padding: 18px 26px;
+  cursor: pointer;
+  text-align: left;
+  display: grid; grid-template-columns: auto 1fr; gap: 14px;
+  align-items: center;
+  transition: transform .3s, box-shadow .3s, border-color .25s;
+  box-shadow: 0 14px 30px -22px color-mix(in oklab, var(--bub-color) 50%, transparent);
+  width: 360px;
+}
+.pill:hover {
+  transform: translate(-50%, -50%) translateY(-3px);
+  box-shadow: 0 22px 40px -20px color-mix(in oklab, var(--bub-color) 60%, transparent);
+}
+.pill .ico { width: 36px; height: 36px;
+  border-radius: 10px; display: grid; place-items: center;
+  background: color-mix(in oklab, var(--bub-color) 18%, white);
+}
+.pill .ico svg { width: 22px; height: 22px; color: var(--bub-color); }
+.pill .meta { display: flex; flex-direction: column; }
+.pill .meta .name { font-weight: 700; font-size: 16px; line-height: 1.1; color: var(--bub-color); }
+.pill .meta .desc { font-size: 12.5px; color: var(--ink-2); line-height: 1.35; margin-top: 2px; }
+
+/* Center hub */
+.center-hub {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1.5px dashed var(--rule-strong);
+  display: grid; place-items: center;
+  text-align: center;
+  padding: 18px;
+}
+.center-hub .label {
+  font-family: "Geist Mono", monospace;
+  font-size: 10px; letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  display: block;
+}
+.center-hub .name { font-weight: 600; font-size: 14px; line-height: 1.15; color: var(--ink); }
+.center-hub .name em { font-style: normal; color: var(--c-people); }
+.center-hub .desc { font-size: 11px; color: var(--ink-2); margin-top: 6px; line-height: 1.35; }
+
+/* Connection wires */
+.hub-stage svg.wires {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none;
+}
+.hub-stage svg.wires path {
+  fill: none;
+  stroke: var(--rule-strong);
+  stroke-width: 1.2;
+  stroke-dasharray: 3 5;
+  opacity: 0.5;
+}

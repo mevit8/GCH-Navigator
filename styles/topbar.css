@@ -1,0 +1,66 @@
+/* ============================================================
+   TOP BAR
+   ============================================================ */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  border-bottom: 1px solid var(--rule);
+  background: color-mix(in oklab, var(--bg) 80%, transparent);
+  backdrop-filter: blur(10px);
+}
+.topbar-inner {
+  max-width: 1360px; margin: 0 auto;
+  padding: 14px 28px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.brand {
+  display: flex; align-items: center; gap: 14px;
+  font-weight: 600; letter-spacing: -0.01em;
+  font-size: 14.5px; color: var(--ink);
+}
+.brand img.gch-mark {
+  height: 36px; width: auto; display: block;
+}
+.brand .pipe { width: 1px; height: 26px; background: var(--rule); }
+.brand .product {
+  display: flex; flex-direction: column; line-height: 1.05;
+}
+.brand .product .nm {
+  font-weight: 600; font-size: 14.5px;
+  letter-spacing: -0.01em; color: var(--ink);
+}
+.brand .product .sub {
+  font-family: "Geist Mono", monospace;
+  font-size: 10.5px; font-weight: 400; color: var(--muted);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-top: 3px;
+}
+.top-nav {
+  display: flex; gap: 4px; align-items: center;
+  font-family: "Geist Mono", monospace;
+  font-size: 11.5px; letter-spacing: 0.04em;
+}
+.top-nav a {
+  padding: 8px 12px; border-radius: 8px;
+  color: var(--ink-2);
+  transition: background .15s, color .15s;
+}
+.top-nav a:hover { background: var(--paper-2); color: var(--ink); }
+.top-nav a.active {
+  color: var(--ink); background: var(--paper-2);
+  box-shadow: inset 0 0 0 1px var(--rule);
+}
+.theme-switch {
+  display: flex; gap: 0; align-items: center;
+  border: 1px solid var(--rule); border-radius: 999px;
+  padding: 3px; background: var(--paper);
+}
+.theme-switch button {
+  border: none; background: transparent;
+  padding: 5px 10px; border-radius: 999px;
+  font-family: "Geist Mono", monospace;
+  font-size: 10.5px; letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.theme-switch button.active {
+  background: var(--ink); color: var(--bg);
+}

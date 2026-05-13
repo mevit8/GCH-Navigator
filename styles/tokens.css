@@ -1,0 +1,113 @@
+/* ============================================================
+   THEME TOKENS — three skins, switch with [data-theme]
+   ============================================================ */
+/* SDSN brand: blue #1D76B6  green #39B54A  navy #0F4C75 */
+:root,
+[data-theme="sdsn"] {
+  --bg: #f4f7fb;
+  --paper: #ffffff;
+  --paper-2: #fafcff;
+  --ink: #0e1a2b;
+  --ink-2: #3a4a60;
+  --muted: #788599;
+  --rule: #dde6f1;
+  --rule-strong: #a8b8cc;
+
+  --sdsn-blue:  #1D76B6;
+  --sdsn-green: #39B54A;
+  --sdsn-navy:  #0F4C75;
+
+  --c-land:  #39B54A;
+  --c-water: #1D76B6;
+  --c-energy:#F39200;
+  --c-econ:  #6E3FB6;
+  --c-scen:  #0F4C75;
+  --c-fin:   #E8B100;
+  --c-people:#0F4C75;
+
+  --c-land-soft:  #d6f0d9;
+  --c-water-soft: #d4e6f5;
+  --c-energy-soft:#fde4c2;
+  --c-econ-soft:  #e3d6f3;
+  --c-scen-soft:  #d3e2ee;
+  --c-fin-soft:   #fbeec2;
+
+  --acc: var(--sdsn-blue);
+  --brand-grad: linear-gradient(120deg, var(--sdsn-blue) 0%, var(--sdsn-green) 100%);
+  --hub-bg: radial-gradient(900px 600px at 90% -5%, color-mix(in oklab, var(--sdsn-green) 14%, transparent) 0%, transparent 60%),
+            radial-gradient(800px 600px at -5% 105%, color-mix(in oklab, var(--sdsn-blue) 14%, transparent) 0%, transparent 55%),
+            var(--bg);
+}
+
+[data-theme="vivid"] {
+  --bg: #eef4fb;
+  --paper: #ffffff;
+  --paper-2: #ffffff;
+  --ink: #07101e;
+  --ink-2: #2a3a55;
+  --muted: #6c7d96;
+  --rule: #cfdcec;
+  --rule-strong: #93a8c2;
+
+  --sdsn-blue:  #1D76B6;
+  --sdsn-green: #39B54A;
+  --sdsn-navy:  #0F4C75;
+
+  --c-land:  #2EA043;
+  --c-water: #1D76B6;
+  --c-energy:#FF6A00;
+  --c-econ:  #7B2CBF;
+  --c-scen:  #0F4C75;
+  --c-fin:   #FFB300;
+  --c-people:#0F4C75;
+
+  --c-land-soft:  #c9eed2;
+  --c-water-soft: #c8e0f4;
+  --c-energy-soft:#ffd9b8;
+  --c-econ-soft:  #e0ccf5;
+  --c-scen-soft:  #cddeed;
+  --c-fin-soft:   #ffe8a8;
+
+  --acc: var(--sdsn-blue);
+  --brand-grad: linear-gradient(120deg, var(--sdsn-blue) 0%, var(--sdsn-green) 100%);
+  --hub-bg: linear-gradient(180deg, #f4f9ff 0%, #e6efff 100%);
+}
+
+[data-theme="navy"] {
+  --bg: #0c1a2e;
+  --paper: #15263e;
+  --paper-2: #1a2e4a;
+  --ink: #f5f9ff;
+  --ink-2: #c8d4e4;
+  --muted: #8aa0bd;
+  --rule: #2a3e5e;
+  --rule-strong: #4a6385;
+
+  --sdsn-blue:  #4FA3D9;
+  --sdsn-green: #5FD16E;
+  --sdsn-navy:  #0F4C75;
+
+  --c-land:  #5FD16E;
+  --c-water: #4FA3D9;
+  --c-energy:#FFB347;
+  --c-econ:  #B589F0;
+  --c-scen:  #4FA3D9;
+  --c-fin:   #FFD166;
+  --c-people:#c8d4e4;
+
+  --c-land-soft:  #1f3a2a;
+  --c-water-soft: #143247;
+  --c-energy-soft:#3a2a16;
+  --c-econ-soft:  #2a1f44;
+  --c-scen-soft:  #143247;
+  --c-fin-soft:   #3a3014;
+
+  --acc: var(--sdsn-blue);
+  --brand-grad: linear-gradient(120deg, var(--sdsn-blue) 0%, var(--sdsn-green) 100%);
+  --hub-bg: radial-gradient(900px 600px at 90% -5%, rgba(95,209,110,0.10) 0%, transparent 60%),
+            radial-gradient(800px 600px at -5% 105%, rgba(79,163,217,0.12) 0%, transparent 55%),
+            var(--bg);
+
+  --sans: "Geist", -apple-system, system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, monospace;
+}

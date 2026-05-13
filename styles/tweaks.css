@@ -1,0 +1,83 @@
+/* ============================================================
+   TWEAKS PANEL
+   ============================================================ */
+.tweaks-panel {
+  position: fixed; right: 20px; bottom: 20px; z-index: 100;
+  width: 300px; max-height: calc(100vh - 40px);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  box-shadow: 0 24px 48px -16px rgba(0,0,0,0.18), 0 1px 0 rgba(0,0,0,0.04);
+  display: none; flex-direction: column;
+  overflow: hidden;
+  font-family: "Geist", sans-serif;
+}
+.tweaks-panel.open { display: flex; }
+.tweaks-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-2);
+}
+.tweaks-head .ttl {
+  font-family: "Geist Mono", monospace;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink);
+}
+.tweaks-head button {
+  border: none; background: transparent;
+  width: 24px; height: 24px; border-radius: 6px;
+  color: var(--muted);
+}
+.tweaks-head button:hover { background: var(--rule); color: var(--ink); }
+.tweaks-body {
+  padding: 8px 14px 14px;
+  overflow-y: auto;
+}
+.tweak-row { padding: 10px 0; border-bottom: 1px dashed var(--rule); }
+.tweak-row:last-child { border-bottom: none; }
+.tweak-row .lbl {
+  font-size: 12px; font-weight: 500; color: var(--ink);
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 6px;
+}
+.tweak-row .lbl .val {
+  font-family: "Geist Mono", monospace;
+  font-size: 10.5px; color: var(--muted); font-weight: 400;
+}
+.tweak-radio {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 1fr;
+  gap: 0;
+  border: 1px solid var(--rule); border-radius: 8px; padding: 2px;
+  background: var(--paper-2);
+}
+.tweak-radio button {
+  border: none; background: transparent;
+  padding: 6px 8px; border-radius: 6px;
+  font-family: "Geist Mono", monospace;
+  font-size: 10.5px; letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.tweak-radio button.active {
+  background: var(--ink); color: var(--bg);
+}
+.tweak-row input[type="range"] {
+  width: 100%;
+  accent-color: var(--sdsn-blue, var(--ink));
+}
+.tweak-toggle {
+  display: flex; align-items: center; gap: 8px;
+  cursor: pointer;
+}
+.tweak-toggle input { accent-color: var(--sdsn-blue, var(--ink)); }
+.tweak-toggle .t { font-size: 12px; color: var(--ink-2); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 960px) {
+  .stage { grid-template-columns: 1fr; padding: 36px 28px; min-height: auto; }
+  .stage .rhs { min-height: 280px; }
+  .model-meta { grid-template-columns: 1fr; }
+  .top-nav .label { display: none; }
+}

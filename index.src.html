@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Decision Support Navigator · GCH</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<template id="__bundler_thumbnail" data-bg-color="#f4f7fb">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#f4f7fb"/>
+    <circle cx="400" cy="400" r="140" fill="none" stroke="#39B54A" stroke-width="6"/>
+    <circle cx="800" cy="400" r="140" fill="none" stroke="#1D76B6" stroke-width="6"/>
+    <circle cx="600" cy="260" r="100" fill="none" stroke="#0F4C75" stroke-width="6"/>
+    <circle cx="600" cy="540" r="100" fill="none" stroke="#F39200" stroke-width="6"/>
+    <circle cx="600" cy="400" r="60" fill="#0F4C75"/>
+    <text x="600" y="408" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="2">GCH</text>
+  </svg>
+</template>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/tokens.css" />
+<link rel="stylesheet" href="styles/base.css" />
+<link rel="stylesheet" href="styles/topbar.css" />
+<link rel="stylesheet" href="styles/intro.css" />
+<link rel="stylesheet" href="styles/hub.css" />
+<link rel="stylesheet" href="styles/model.css" />
+<link rel="stylesheet" href="styles/footer.css" />
+<link rel="stylesheet" href="styles/tweaks.css" />
+</head>
+<body data-theme="sdsn">
+
+  <!-- ============== TOP BAR ============== -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#/hub" class="brand">
+        <img src="assets/gch-logo.png" alt="SDSN Global Climate Hub" class="gch-mark" />
+        <span class="pipe"></span>
+        <span class="product">
+          <span class="nm">Decision Support Navigator</span>
+          <span class="sub">An open platform for systems transformation</span>
+        </span>
+      </a>
+      <nav class="top-nav">
+        <a href="#/intro" data-route="intro" class="route-link"><span class="label">Approach</span></a>
+        <a href="#/hub" data-route="hub" class="route-link"><span class="label">Models</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============== INTRO VIEW ============== -->
+  <section class="view" id="view-intro">
+    <div class="intro-shell">
+      <div class="intro-eyebrow">
+        <span class="dot"></span>
+        <span>The GCH approach</span>
+        <span style="color:var(--rule-strong);">/</span>
+        <span>Stages 01 — 05</span>
+      </div>
+
+      <div class="stage-track">
+        <div class="stage-viewport">
+          <div class="stage-rail" id="stageRail">
+
+            <!-- Stage 1: Vision -->
+            <article class="stage">
+              <div class="lhs">
+                <span class="num">Stage 01 / Vision</span>
+                <h2>A <em>Global Commons</em> for systems transformation.</h2>
+                <p class="lede">An open, accessible digital platform that couples integrated modelling, data infrastructure and stakeholder co-design — to translate systemic evidence into coordinated, country-specific action toward the SDGs.</p>
+                <ul class="points">
+                  <li>Convergent crises require systems-level coordination, not sector-by-sector analysis.</li>
+                  <li>Entry points and levers should emerge from measurement — not be assumed in advance.</li>
+                  <li>Replicable methodology, not a universal prescription.</li>
+                </ul>
+              </div>
+              <div class="rhs">
+                <!-- Vision art: nested rings -->
+                <svg class="art" viewBox="0 0 400 320" aria-hidden="true">
+                  <defs>
+                    <radialGradient id="rg1" cx="50%" cy="50%" r="50%">
+                      <stop offset="0" stop-color="var(--c-land)" stop-opacity="0.18"/>
+                      <stop offset="1" stop-color="var(--c-land)" stop-opacity="0"/>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="200" cy="160" r="140" fill="url(#rg1)"/>
+                  <circle cx="200" cy="160" r="130" fill="none" stroke="currentColor" stroke-opacity="0.2" stroke-dasharray="3 6" style="color: var(--ink-2);"/>
+                  <circle cx="200" cy="160" r="92"  fill="none" stroke="var(--c-land)" stroke-width="1.5" stroke-opacity="0.7"/>
+                  <circle cx="200" cy="160" r="56"  fill="none" stroke="var(--c-water)" stroke-width="1.5" stroke-opacity="0.7"/>
+                  <circle cx="200" cy="160" r="22"  fill="var(--ink)"/>
+                  <text x="200" y="164" text-anchor="middle" fill="white" font-family="Geist Mono" font-size="11" font-weight="600">GCH</text>
+                  <text x="200" y="38" text-anchor="middle" fill="var(--ink-2)" font-family="Geist Mono" font-size="10" letter-spacing="2">CO-DESIGN</text>
+                  <text x="200" y="296" text-anchor="middle" fill="var(--ink-2)" font-family="Geist Mono" font-size="10" letter-spacing="2">FINANCE</text>
+                  <text x="48" y="166" text-anchor="middle" fill="var(--ink-2)" font-family="Geist Mono" font-size="10" letter-spacing="2">DATA</text>
+                  <text x="352" y="166" text-anchor="middle" fill="var(--ink-2)" font-family="Geist Mono" font-size="10" letter-spacing="2">MODELS</text>
+                </svg>
+              </div>
+            </article>
+
+            <!-- Stage 2: Three-step approach -->
+            <article class="stage">
+              <div class="lhs">
+                <span class="num">Stage 02 / Operational framework</span>
+                <h2>The <em>three-step</em> approach.</h2>
+                <p class="lede">A practical loop for operationalizing systems transformation. The same three steps run continuously — at country, regional and global scales.</p>
+                <ul class="points">
+                  <li>Outputs of one step feed the next; the loop tightens with every iteration.</li>
+                  <li>Embedded into a digital Global Commons so anyone can run it.</li>
+                </ul>
+              </div>
+              <div class="rhs" style="padding: 36px;">
+                <div class="ladder" style="max-width: 380px;">
+                  <div class="ladder-step">
+                    <div class="ln">01</div>
+                    <div>
+                      <div class="lt">Continuous monitoring &amp; assessment</div>
+                      <div class="lp">Spatially explicit indicators across biophysical, economic and social systems.</div>
+                    </div>
+                  </div>
+                  <div class="ladder-arrow"></div>
+                  <div class="ladder-step">
+                    <div class="ln">02</div>
+                    <div>
+                      <div class="lt">Co-designed transformation pathways</div>
+                      <div class="lp">Integrated modelling chains × stakeholder engagement.</div>
+                    </div>
+                  </div>
+                  <div class="ladder-arrow"></div>
+                  <div class="ladder-step">
+                    <div class="ln">03</div>
+                    <div>
+                      <div class="lt">Aligned financing &amp; governance</div>
+                      <div class="lp">Investment tools, accountability, implementation.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Stage 3: Step 1 detail -->
+            <article class="stage">
+              <div class="lhs">
+                <span class="num">Stage 03 / Step 01</span>
+                <h2>Continuous <em>monitoring &amp; assessment</em>.</h2>
+                <p class="lede">A living evidence base. Coupled data infrastructures and digital twins that quantify the country-specific feasible space — the binding biophysical, economic and social constraints.</p>
+                <ul class="points">
+                  <li>Earth observation × in-situ sensors × administrative data.</li>
+                  <li>Indicators tracked at the same granularity as policy is made.</li>
+                  <li>Outputs: feasibility envelopes used to calibrate Step 2.</li>
+                </ul>
+              </div>
+              <div class="rhs">
+                <!-- Indicator-grid art -->
+                <svg class="art" viewBox="0 0 400 280" aria-hidden="true">
+                  <g stroke="var(--rule)" stroke-width="1">
+                    <line x1="40" y1="40" x2="40" y2="240"/>
+                    <line x1="40" y1="240" x2="360" y2="240"/>
+                  </g>
+                  <g font-family="Geist Mono" font-size="9" fill="var(--muted)">
+                    <text x="40" y="258" text-anchor="middle">2020</text>
+                    <text x="120" y="258" text-anchor="middle">2025</text>
+                    <text x="200" y="258" text-anchor="middle">2030</text>
+                    <text x="280" y="258" text-anchor="middle">2040</text>
+                    <text x="360" y="258" text-anchor="middle">2050</text>
+                  </g>
+                  <path d="M 40 200 Q 120 180 200 140 T 360 60"
+                        fill="none" stroke="var(--c-land)" stroke-width="2.5"/>
+                  <path d="M 40 220 Q 120 215 200 200 T 360 140"
+                        fill="none" stroke="var(--c-water)" stroke-width="2.5"/>
+                  <path d="M 40 180 Q 120 170 200 175 T 360 100"
+                        fill="none" stroke="var(--c-energy)" stroke-width="2.5"/>
+                  <g>
+                    <circle cx="360" cy="60" r="4" fill="var(--c-land)"/>
+                    <circle cx="360" cy="100" r="4" fill="var(--c-energy)"/>
+                    <circle cx="360" cy="140" r="4" fill="var(--c-water)"/>
+                  </g>
+                  <text x="40" y="30" font-family="Geist Mono" font-size="10" fill="var(--ink-2)">indicator drift, 2020 — 2050</text>
+                </svg>
+              </div>
+            </article>
+
+            <!-- Stage 4: Step 2 detail with Figure 2 placeholder -->
+            <article class="stage">
+              <div class="lhs">
+                <span class="num">Stage 04 / Step 02 · Figure 2</span>
+                <h2>Co-designed <em>transformation pathways</em>.</h2>
+                <p class="lede">Integrated modelling chains coupled with structured stakeholder engagement. Pathway design is an iterative dialogue between models, communities and decision-makers.</p>
+                <ul class="points">
+                  <li>WEF nexus: water, energy, food &amp; land coupled with macroeconomy.</li>
+                  <li>Beyond-GDP CGE with ecosystem services valuation.</li>
+                  <li>Living-lab validation by stakeholders before scenarios go public.</li>
+                </ul>
+              </div>
+              <div class="rhs">
+                <!-- Figure 2: pathway co-design schematic -->
+                <svg class="art" viewBox="0 0 400 320" aria-hidden="true">
+                  <defs>
+                    <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                      <path d="M0,0 L10,5 L0,10 z" fill="var(--ink-2)"/>
+                    </marker>
+                  </defs>
+                  <!-- left column models -->
+                  <g>
+                    <rect x="20" y="40"  width="120" height="44" rx="10" fill="var(--c-water-soft)" stroke="var(--c-water)" stroke-width="1.2"/>
+                    <text x="80" y="66" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-water)">Water</text>
+                    <rect x="20" y="100" width="120" height="44" rx="10" fill="var(--c-land-soft)" stroke="var(--c-land)" stroke-width="1.2"/>
+                    <text x="80" y="126" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-land)">Land &amp; Food</text>
+                    <rect x="20" y="160" width="120" height="44" rx="10" fill="var(--c-energy-soft)" stroke="var(--c-energy)" stroke-width="1.2"/>
+                    <text x="80" y="186" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-energy)">Energy</text>
+                    <rect x="20" y="220" width="120" height="44" rx="10" fill="var(--c-econ-soft)" stroke="var(--c-econ)" stroke-width="1.2"/>
+                    <text x="80" y="246" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-econ)">Economy</text>
+                  </g>
+                  <!-- center coupling -->
+                  <g>
+                    <rect x="170" y="120" width="80" height="80" rx="14" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+                    <text x="210" y="156" text-anchor="middle" font-family="Geist" font-weight="600" font-size="11" fill="var(--ink)">Coupled</text>
+                    <text x="210" y="170" text-anchor="middle" font-family="Geist" font-weight="600" font-size="11" fill="var(--ink)">modelling</text>
+                    <text x="210" y="184" text-anchor="middle" font-family="Geist" font-weight="600" font-size="11" fill="var(--ink)">chain</text>
+                  </g>
+                  <!-- right stakeholder loop -->
+                  <g>
+                    <rect x="270" y="100" width="110" height="120" rx="14" fill="color-mix(in oklab, var(--c-people) 8%, white)" stroke="var(--c-people)" stroke-width="1.2"/>
+                    <text x="325" y="138" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-people)">Stakeholders</text>
+                    <text x="325" y="156" text-anchor="middle" font-family="Geist" font-size="10" fill="var(--ink-2)">co-design</text>
+                    <text x="325" y="170" text-anchor="middle" font-family="Geist" font-size="10" fill="var(--ink-2)">living labs</text>
+                    <text x="325" y="184" text-anchor="middle" font-family="Geist" font-size="10" fill="var(--ink-2)">validation</text>
+                  </g>
+                  <!-- arrows -->
+                  <g stroke="var(--ink-2)" stroke-width="1.4" fill="none">
+                    <path d="M 140 62  C 158 62, 165 130, 170 140" marker-end="url(#ar2)"/>
+                    <path d="M 140 122 C 158 122, 165 145, 170 152" marker-end="url(#ar2)"/>
+                    <path d="M 140 182 C 158 182, 165 168, 170 168" marker-end="url(#ar2)"/>
+                    <path d="M 140 242 C 158 242, 165 180, 170 180" marker-end="url(#ar2)"/>
+                    <path d="M 250 160 L 268 160" marker-end="url(#ar2)"/>
+                    <path d="M 270 200 C 220 260, 130 260, 80 264 L 80 226" marker-end="url(#ar2)"/>
+                  </g>
+                </svg>
+              </div>
+            </article>
+
+            <!-- Stage 5: Step 3 detail with Figure 3 placeholder -->
+            <article class="stage">
+              <div class="lhs">
+                <span class="num">Stage 05 / Step 03 · Figure 3</span>
+                <h2>Aligned <em>financing &amp; governance</em>.</h2>
+                <p class="lede">A reformed global financial architecture in which capital flows to country-validated pathways — and where ecosystem services are priced into macroeconomic decisions.</p>
+                <ul class="points">
+                  <li>Sovereign &amp; concessional finance aligned to pathway milestones.</li>
+                  <li>Ecosystem services valuation embedded in CGE.</li>
+                  <li>Transparent accountability to keep transitions on track.</li>
+                </ul>
+              </div>
+              <div class="rhs">
+                <!-- Figure 3: finance flow schematic -->
+                <svg class="art" viewBox="0 0 400 320" aria-hidden="true">
+                  <defs>
+                    <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                      <path d="M0,0 L10,5 L0,10 z" fill="var(--c-fin)"/>
+                    </marker>
+                  </defs>
+                  <!-- top: pathway -->
+                  <rect x="80" y="30" width="240" height="46" rx="12" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.4"/>
+                  <text x="200" y="51" text-anchor="middle" font-family="Geist" font-weight="600" font-size="13">Country-validated pathway</text>
+                  <text x="200" y="66" text-anchor="middle" font-family="Geist Mono" font-size="9.5" fill="var(--muted)">milestones · indicators · timelines</text>
+                  <!-- finance pillars -->
+                  <g>
+                    <rect x="30"  y="130" width="105" height="86" rx="12" fill="var(--c-fin-soft)" stroke="var(--c-fin)" stroke-width="1.2"/>
+                    <text x="82" y="160" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-fin)">Sovereign &amp;</text>
+                    <text x="82" y="175" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-fin)">concessional</text>
+                    <text x="82" y="195" text-anchor="middle" font-family="Geist Mono" font-size="9" fill="var(--ink-2)">milestone-linked</text>
+                    <rect x="148" y="130" width="105" height="86" rx="12" fill="var(--c-fin-soft)" stroke="var(--c-fin)" stroke-width="1.2"/>
+                    <text x="200" y="160" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-fin)">Private capital</text>
+                    <text x="200" y="175" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-fin)">&amp; blended</text>
+                    <text x="200" y="195" text-anchor="middle" font-family="Geist Mono" font-size="9" fill="var(--ink-2)">de-risked</text>
+                    <rect x="266" y="130" width="105" height="86" rx="12" fill="var(--c-fin-soft)" stroke="var(--c-fin)" stroke-width="1.2"/>
+                    <text x="318" y="160" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-fin)">Ecosystem</text>
+                    <text x="318" y="175" text-anchor="middle" font-family="Geist" font-weight="600" font-size="12" fill="var(--c-fin)">services</text>
+                    <text x="318" y="195" text-anchor="middle" font-family="Geist Mono" font-size="9" fill="var(--ink-2)">priced in CGE</text>
+                  </g>
+                  <!-- delivery -->
+                  <rect x="80" y="248" width="240" height="46" rx="12" fill="var(--ink)"/>
+                  <text x="200" y="269" text-anchor="middle" font-family="Geist" font-weight="600" font-size="13" fill="white">Implementation &amp; accountability</text>
+                  <text x="200" y="284" text-anchor="middle" font-family="Geist Mono" font-size="9" fill="rgba(255,255,255,0.65)">audited · transparent · adaptive</text>
+                  <!-- arrows -->
+                  <g stroke="var(--c-fin)" stroke-width="1.5" fill="none">
+                    <path d="M 200 78 L 82 128" marker-end="url(#ar3)"/>
+                    <path d="M 200 78 L 200 128" marker-end="url(#ar3)"/>
+                    <path d="M 200 78 L 318 128" marker-end="url(#ar3)"/>
+                    <path d="M 82 218 L 200 246" marker-end="url(#ar3)"/>
+                    <path d="M 200 218 L 200 246" marker-end="url(#ar3)"/>
+                    <path d="M 318 218 L 200 246" marker-end="url(#ar3)"/>
+                  </g>
+                </svg>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="stage-chrome">
+          <div class="dots" id="dots" role="tablist"></div>
+          <div class="stage-counter">stage <b id="stageNum">01</b> of <b id="stageTotal">05</b></div>
+          <div class="nav-btns">
+            <button id="prevBtn">← Prev</button>
+            <button id="nextBtn" class="primary">Next →</button>
+            <a href="#/hub" class="route-link" style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--rule-strong);background:var(--paper);font-size:13px;font-weight:500;">Skip to models →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== HUB VIEW ============== -->
+  <section class="view" id="view-hub">
+    <div class="hub-shell">
+      <div class="hub-head">
+        <div class="intro-eyebrow" style="justify-content:center;">
+          <span class="dot"></span>
+          <span>Decision Support Navigator</span>
+          <span style="color:var(--rule-strong);">/</span>
+          <span>Choose a system</span>
+        </div>
+        <h1>Explore <em>policy choices</em><br/>across coupled systems.</h1>
+        <p>An open, accessible platform to explore tradeoffs across water, land, energy, economy and finance.
+           Click any system to open its model.</p>
+      </div>
+
+      <div class="hub-stage-wrap" id="hubFit">
+        <div class="hub-stage" id="hubStage">
+
+          <!-- Connection wires (decorative) -->
+          <svg class="wires" viewBox="0 0 1240 760" preserveAspectRatio="none">
+            <!-- center to bubbles -->
+            <path d="M 620 380 L 320 240"/>
+            <path d="M 620 380 L 920 240"/>
+            <path d="M 620 380 L 320 520"/>
+            <path d="M 620 380 L 920 520"/>
+            <path d="M 620 380 L 620 110"/>
+            <path d="M 620 380 L 620 660"/>
+            <!-- bubble cross-links -->
+            <path d="M 320 240 L 920 240"/>
+            <path d="M 320 240 L 320 520"/>
+            <path d="M 920 240 L 920 520"/>
+            <path d="M 320 520 L 920 520"/>
+          </svg>
+
+          <!-- Top: Scenarios & Goals (pill) -->
+          <a href="#/model/scenarios" target="_blank" rel="noopener" class="pill" style="left: 50%; top: 14.5%; --bub-color: var(--c-scen);">
+            <div class="ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-7 5 5 4-3 5 8"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <div class="meta">
+              <span class="name">Scenarios &amp; Goals</span>
+              <span class="desc">Climate scenarios, national plans, shared timelines.</span>
+            </div>
+          </a>
+
+          <!-- Land & Agri-food -->
+          <a href="https://web-production-29d01.up.railway.app/" target="_blank" rel="noopener" class="bubble" style="left: 25.8%; top: 31.5%; width: 240px; height: 240px; --bub-color: var(--c-land);">
+            <div class="ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-2 4-4 5-4 8s2 4 4 4 4-1 4-4-2-4-4-8z"/><path d="M3 20h18"/><path d="M7 20c1-3 3-3 5-3s4 0 5 3"/></svg>
+            </div>
+            <div>
+              <div class="name">Land &amp; Agri-food</div>
+              <div class="desc">Land use, agriculture and food systems.</div>
+              <div class="model">LandReqGCH</div>
+            </div>
+          </a>
+
+          <!-- Economy & Trade -->
+          <a href="https://gch-economy-production.up.railway.app/" target="_blank" rel="noopener" class="bubble" style="left: 74.2%; top: 31.5%; width: 240px; height: 240px; --bub-color: var(--c-econ);">
+            <div class="ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V12"/><path d="M11 20V8"/><path d="M17 20V4"/><path d="M5 12l6-4 6-4"/></svg>
+            </div>
+            <div>
+              <div class="name">Economy &amp; Trade</div>
+              <div class="desc">Jobs, growth, trade, the value of nature.</div>
+              <div class="model">EconomyGCH</div>
+            </div>
+          </a>
+
+          <!-- Water -->
+          <a href="https://gch-watergch-production.up.railway.app/" target="_blank" rel="noopener" class="bubble" style="left: 25.8%; top: 68.5%; width: 240px; height: 240px; --bub-color: var(--c-water);">
+            <div class="ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c4 6 7 9 7 13a7 7 0 0 1-14 0c0-4 3-7 7-13z"/></svg>
+            </div>
+            <div>
+              <div class="name">Water Systems</div>
+              <div class="desc">Supply, management, stress and allocation.</div>
+              <div class="model">WaterReqGCH</div>
+            </div>
+          </a>
+
+          <!-- Energy -->
+          <a href="#/model/energy" target="_blank" rel="noopener" class="bubble" style="left: 74.2%; top: 68.5%; width: 240px; height: 240px; --bub-color: var(--c-energy);">
+            <div class="ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+            </div>
+            <div>
+              <div class="name">Energy &amp; Emissions</div>
+              <div class="desc">Energy choices, emissions, clean solutions.</div>
+              <div class="model">EnergyReqGCH</div>
+            </div>
+          </a>
+
+          <!-- Bottom pill: Financing -->
+          <a href="#/model/financing" target="_blank" rel="noopener" class="pill" style="left: 50%; top: 86.8%; --bub-color: var(--c-fin);">
+            <div class="ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v12"/><path d="M15 9c0-1.5-1.5-2-3-2s-3 .5-3 2 1.5 2 3 2 3 .5 3 2-1.5 2-3 2-3-.5-3-2"/></svg>
+            </div>
+            <div class="meta">
+              <span class="name">Financing &amp; Implementation</span>
+              <span class="desc">Funding options, investment tools, implementation pathways.</span>
+            </div>
+          </a>
+
+          <!-- Center hub: People / Stakeholders -->
+          <div class="center-hub" style="left: 50%; top: 50%;">
+            <div>
+              <span class="label">core</span>
+              <div class="name">People &amp; <em>Stakeholders</em></div>
+              <div class="desc">Living-lab engagement at the centre of every pathway.</div>
+            </div>
+          </div>
+
+          <!-- Biofuel small node (related model) -->
+          <a href="#/model/biofuel" target="_blank" rel="noopener" data-model="biofuel" style="position:absolute; left:11%; top:50%; transform: translate(-50%,-50%); display: inline-flex; align-items:center; gap:8px; padding:8px 14px; background: var(--paper); border:1px solid var(--c-land); border-radius:999px; font-size:12px; color: var(--c-land); font-weight: 500;">
+            <span style="width:7px; height:7px; border-radius:50%; background:var(--c-land);"></span>
+            BiofuelGCH →
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== MODEL VIEW ============== -->
+  <section class="view" id="view-model">
+    <div class="model-shell">
+      <div class="model-bar">
+        <div class="left">
+          <a href="#/hub" class="route-link back">← All models</a>
+          <div class="title">
+            <span class="swatch" id="modelSwatch"></span>
+            <span id="modelTitle">Model</span>
+            <span class="code" id="modelCode">code</span>
+          </div>
+        </div>
+        <div class="right">
+          <span class="pip"></span>
+          <span>connected · streamlit runtime</span>
+          <span style="color:var(--rule-strong);">|</span>
+          <span id="modelTimestamp">last sync · just now</span>
+        </div>
+      </div>
+
+      <div class="model-meta">
+        <div>
+          <h1 id="modelHeading">—</h1>
+          <p id="modelDesc">—</p>
+        </div>
+        <div class="stats" id="modelStats"></div>
+      </div>
+
+      <div class="iframe-frame">
+        <div class="iframe-chrome">
+          <span class="dots"><span></span><span></span><span></span></span>
+          <span class="url" id="iframeUrl">https://apps.gch-navigator.org/&lt;model&gt;</span>
+        </div>
+        <div class="iframe-placeholder">
+          <div class="badge">
+            <div class="label">Streamlit slot</div>
+            <div class="title" id="iframeTitle">Model app embed</div>
+            <div class="desc">When the Streamlit URL is wired up, the live app loads here. The header above stays available for one-click return to the hub.</div>
+            <div class="url-stub" id="iframeStub">/apps/&lt;model&gt;</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="model-footer">
+        <div style="font-size:13px; color: var(--ink-2);">Need a different system?</div>
+        <div class="related" id="relatedChips"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== TWEAKS PANEL ============== -->
+  <aside class="tweaks-panel" id="tweaksPanel" aria-label="Tweaks">
+    <header class="tweaks-head">
+      <span class="ttl">Tweaks</span>
+      <button id="tweaksClose" aria-label="Close tweaks">✕</button>
+    </header>
+    <div class="tweaks-body">
+      <div class="tweak-row">
+        <div class="lbl"><span>Bubble size</span><span class="val" id="valBubble">100%</span></div>
+        <input type="range" id="tkBubble" min="0.78" max="1.18" step="0.02" value="1" />
+      </div>
+      <div class="tweak-row">
+        <div class="lbl"><span>Hub canvas width</span><span class="val" id="valWidth">1240px</span></div>
+        <input type="range" id="tkWidth" min="1080" max="1440" step="20" value="1240" />
+      </div>
+      <div class="tweak-row">
+        <label class="tweak-toggle"><input type="checkbox" id="tkWires" checked /><span class="t">Show connection wires</span></label>
+      </div>
+      <div class="tweak-row">
+        <label class="tweak-toggle"><input type="checkbox" id="tkCenter" checked /><span class="t">Show people / stakeholders core</span></label>
+      </div>
+      <div class="tweak-row">
+        <label class="tweak-toggle"><input type="checkbox" id="tkBiofuel" checked /><span class="t">Show Biofuels satellite</span></label>
+      </div>
+      <div class="tweak-row">
+        <div class="lbl"><span>Slide vertical padding</span><span class="val" id="valPad">52px</span></div>
+        <input type="range" id="tkPad" min="24" max="72" step="2" value="52" />
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============== SITE FOOTER ============== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-credit">An initiative of the SDSN Global Climate Hub</div>
+      <div class="footer-logos">
+        <img src="assets/gch-logo.png" alt="SDSN Global Climate Hub" class="fl-gch" />
+        <span class="fl-sep"></span>
+        <img src="assets/sdsn-logo.svg" alt="Sustainable Development Solutions Network" class="fl-sdsn" />
+        <span class="fl-sep"></span>
+        <img src="assets/sdsn-aris.svg" alt="AERIIA" class="fl-aris" />
+      </div>
+    </div>
+  </footer>
+
+    <!-- Scripts: load in order (models -> hub-fit -> router -> carousel -> tweaks -> main) -->
+  <script src="scripts/models.js"></script>
+<script src="scripts/hub-fit.js"></script>
+<script src="scripts/router.js"></script>
+<script src="scripts/carousel.js"></script>
+<script src="scripts/tweaks.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
