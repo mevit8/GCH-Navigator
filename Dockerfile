@@ -4,4 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-CMD sh -c "python -m http.server ${PORT:-8000}"
+ENV PORT=8000
+
+CMD python -m http.server 8000
