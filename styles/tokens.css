@@ -22,7 +22,7 @@
   --c-energy:#F39200;
   --c-econ:  #6E3FB6;
   --c-scen:  #0F4C75;
-  --c-fin:   #0CA678;
+  --c-fin:   #E11D48;
   --c-people:#0F4C75;
 
   --c-land-soft:  #d6f0d9;
@@ -30,7 +30,7 @@
   --c-energy-soft:#fde4c2;
   --c-econ-soft:  #e3d6f3;
   --c-scen-soft:  #d3e2ee;
-  --c-fin-soft:   #d1fae5;
+  --c-fin-soft:   #fce7f3;
 
   --acc: var(--sdsn-blue);
   --brand-grad: linear-gradient(120deg, var(--sdsn-blue) 0%, var(--sdsn-green) 100%);

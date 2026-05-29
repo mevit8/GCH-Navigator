@@ -116,7 +116,7 @@
   transform: translate(-50%, -50%);
   width: 180px; height: 180px;
   border-radius: 50%;
-  background: var(--paper);
+  background: color-mix(in oklab, var(--c-people) 12%, var(--paper));
   border: 1.5px dashed var(--rule-strong);
   display: grid; place-items: center;
   text-align: center;
