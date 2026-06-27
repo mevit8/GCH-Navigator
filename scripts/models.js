@@ -29,7 +29,7 @@
       color: "var(--c-energy)",
       desc: "Energy-system & emissions accounting under demand and supply scenarios. Fuel-by-fuel consumption per sector and resulting GHG trajectories.",
       stats: [["fuels", "12"], ["processes", "30+"], ["horizon", "2050"], ["coupling", "LEAP"]],
-      url: null,
+      url: "https://gch-energygch-production.up.railway.app/",
     },
     economy: {
       name: "Economy & Trade",
